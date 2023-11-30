@@ -1,13 +1,17 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 import { useNavigation } from "@react-navigation/native";
+import Card from "../components/card/Card";
+
 
 type NavProps = {
     navigate: (value: string) => void;
 }
 
 export default function Home() {
+
+
     const navigation = useNavigation<NavProps>();
 
     const navigateToCartScreen = () => {
@@ -15,16 +19,15 @@ export default function Home() {
     };
 
     return (
-        <View style={styles.container}>
-
+        <SafeAreaView style={styles.container}>
             <View style={styles.boxText}>
-                <Text style={styles.textHeader}>Lista de produtos</Text>
+                <Text style={styles.textHeader}>Lista de Produtos</Text>
                 <TouchableOpacity style={styles.btnIcon} onPress={navigateToCartScreen}>
                     <Ionicons name="cart-outline" color={"white"} size={30} />
                 </TouchableOpacity>
             </View>
-
-        </View>
+            <Card />
+        </SafeAreaView>
     );
 }
 
@@ -34,15 +37,18 @@ const styles = StyleSheet.create({
         backgroundColor: "#343541",
         alignItems: "center",
         justifyContent: "center",
+        paddingEnd: 14,
+        paddingStart: 14
     },
     boxText: {
-        top: 50,
+        top: 55,
         width: '100%',
         alignItems: 'center',
         flexDirection: 'row',
         position: 'absolute',
         paddingHorizontal: 12,
         justifyContent: 'space-between',
+        padding: 12,
     },
     textHeader: {
         fontSize: 25,
