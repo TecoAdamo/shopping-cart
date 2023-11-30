@@ -37,6 +37,14 @@ const styles = StyleSheet.create({
     },
     price: {
         color: 'white'
+    },
+    buttonAdd: {
+        backgroundColor: 'blue',
+        width: 22,
+        height: 22,
+    },
+    buttonText: {
+        textAlign: 'center'
     }
 
 })
