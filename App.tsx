@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import Home from './src/Screens/Home';
 import Cart from './src/Screens/Cart'
 
@@ -9,6 +10,8 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
+
+
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
@@ -40,6 +43,7 @@ const App = () => {
           }}
         />
       </Stack.Navigator>
+
     </NavigationContainer>
   );
 };

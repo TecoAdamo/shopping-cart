@@ -4,11 +4,8 @@ export default function Cart() {
 
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} />
 
-
-
-        </View>
     );
 }
 

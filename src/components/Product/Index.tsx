@@ -1,6 +1,9 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
+
 export default function Product({ data }) {
+
+
     return (
         <View style={styles.container}>
 
@@ -8,7 +11,7 @@ export default function Product({ data }) {
                 <Text style={styles.title}>{data.name}</Text>
                 <Text style={styles.price}> R$ {data.price}</Text>
             </View>
-            <TouchableOpacity style={styles.buttonAdd} >
+            <TouchableOpacity style={styles.buttonAdd}>
                 <Text style={styles.buttonText}>+</Text>
             </TouchableOpacity>
 
@@ -44,7 +47,8 @@ const styles = StyleSheet.create({
         height: 22,
     },
     buttonText: {
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
     }
 
 })

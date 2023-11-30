@@ -1,8 +1,9 @@
 import { View, StyleSheet, FlatList, SafeAreaView, TouchableOpacity } from "react-native";
 
 import { useState } from "react";
-import Product from "../Product/Index";
 
+
+import Product from "../Product/Index";
 
 export default function Card() {
     const [products, setProducts] = useState([
@@ -45,6 +46,16 @@ export default function Card() {
             "id": 8,
             "name": "Sapato Social",
             "price": 69.99
+        },
+        {
+            "id": 9,
+            "name": "Moletom",
+            "price": 59.99
+        },
+        {
+            "id": 10,
+            "name": "Meia",
+            "price": 19.99
         }
 
 
@@ -58,6 +69,7 @@ export default function Card() {
 
                 style={[styles.list, { marginTop: 120 }]}
                 data={products}
+                showsVerticalScrollIndicator={false}
                 keyExtractor={(item) => String(item.id)}
                 renderItem={({ item }) => <Product data={item} />}
             />

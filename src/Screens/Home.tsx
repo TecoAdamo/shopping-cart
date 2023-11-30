@@ -1,17 +1,14 @@
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, FlatList } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-
-import { useNavigation } from "@react-navigation/native";
-import Card from "../components/card/Card";
-
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import Card from '../components/card/Card';
 
 type NavProps = {
     navigate: (value: string) => void;
 }
 
 export default function Home() {
-
-
     const navigation = useNavigation<NavProps>();
 
     const navigateToCartScreen = () => {
@@ -23,9 +20,13 @@ export default function Home() {
             <View style={styles.boxText}>
                 <Text style={styles.textHeader}>Lista de Produtos</Text>
                 <TouchableOpacity style={styles.btnIcon} onPress={navigateToCartScreen}>
-                    <Ionicons name="cart-outline" color={"white"} size={30} />
+                    <Ionicons name="cart-outline" color={'white'} size={30} />
+                    <View style={styles.dot}>
+                        <Text style={styles.dotText}>0</Text>
+                    </View>
                 </TouchableOpacity>
             </View>
+
             <Card />
         </SafeAreaView>
     );
@@ -34,11 +35,11 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#343541",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundColor: '#535878',
+        alignItems: 'center',
+        justifyContent: 'center',
         paddingEnd: 14,
-        paddingStart: 14
+        paddingStart: 14,
     },
     boxText: {
         top: 55,
@@ -56,8 +57,22 @@ const styles = StyleSheet.create({
         fontWeight: '700',
     },
     btnIcon: {
-        right: 8
-    }
-
-
+        right: 8,
+    },
+    dot: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'blue',
+        width: 20,
+        height: 20,
+        borderRadius: 10,
+        position: 'absolute',
+        zIndex: 99,
+        bottom: -2,
+        left: -4,
+    },
+    dotText: {
+        color: 'white',
+        fontWeight: 'bold',
+    },
 });
